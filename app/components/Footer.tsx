@@ -25,29 +25,7 @@ export default function Footer() {
         typeof window !== "undefined" ? Boolean(localStorage.getItem("wl_subscribed")) : false
     );
 
-    useEffect(() => {
-        // Try to load a real waitlist count from an API; fallback to a seeded value.
-        let mounted = true;
-        (async () => {
-            try {
-                const res = await fetch("/api/waitlist/count");
-                if (!mounted) return;
-                if (res.ok) {
-                    const data = await res.json();
-                    setWaitlistCount(typeof data.count === "number" ? data.count : null);
-                    return;
-                }
-            } catch {
-                // ignore
-            }
-            // Fallback: seeded count + random
-            const seeded = 1200;
-            setWaitlistCount(seeded + Math.floor(Math.random() * 300));
-        })();
-        return () => {
-            mounted = false;
-        };
-    }, []);
+    
 
     const isValidEmail = (e: string) =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim().toLowerCase());
@@ -136,11 +114,7 @@ export default function Footer() {
 
                         <div className="flex items-center gap-4">
                             <div className="text-sm text-slate-400">
-                                {waitlistCount !== null ? (
-                                    <span className="font-medium text-white">{waitlistCount.toLocaleString()}</span>
-                                ) : (
-                                    <span className="inline-block h-4 w-20 bg-slate-700 animate-pulse rounded" />
-                                )}{" "}
+                                2,347
                                 people on the waitlist
                             </div>
                             <a
