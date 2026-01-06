@@ -100,7 +100,7 @@ export default function Home() {
 
 
           {/* Avatars / waitlist count */}
-          <div className="mt-4 flex md:block hidden flex-col items-center gap-4">
+          <div className="mt-4 flex flex-col items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((a, i) => (
                 <Image
