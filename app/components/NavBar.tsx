@@ -13,7 +13,7 @@ export default function NavBar() {
     ];
 
     return (
-        <header className="w-[60%] z-[999] fixed left-1/2 bg-[#ffffff11] backdrop-blur-sm -translate-x-1/2 top-5 text-white py-4  px-14 rounded-full">
+        <header className="w-[60%] hidden md:block z-[999] fixed left-1/2 bg-[#ffffff11] backdrop-blur-sm -translate-x-1/2 top-5 text-white py-4  px-14 rounded-full">
             <div className="max-w-3xl mx-auto   flex items-center justify-between gap-6">
                 <a href="#home" className="text-lg font-bold text-gray-200">
                     Buildam
